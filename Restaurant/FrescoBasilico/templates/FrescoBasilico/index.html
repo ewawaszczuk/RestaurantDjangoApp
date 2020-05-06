@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{%load static %}
+{% block content %}
+
+<section class="bg-1 h-900x main-slider pos-relative">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white">
+
+                                <h5><b>BEST IN TOWN</b></h5>
+                                <h1 class="mt-30 mb-15"> Fresco Basilico</h1>
+                                <h5><a href="{% url 'menu' %}" class="btn-primaryc plr-25"><b>SEE OUR MENU</b></a></h5>
+                        </div><!-- dplay-tbl-cell -->
+                </div><!-- dplay-tbl -->
+        </div><!-- container -->
+</section>
+
+<!-- Our story container -->
+<section class="story-area left-text center-sm-text">
+        <div class="container">
+
+                <div class="row">
+                        <div class="col-md-6"><img class="mb-30" src="{% static 'images/about-1-600x400.jpg' %}" alt=""></div>
+                        <div class="col-md-6"><img class="mb-30" src="{% static 'images/about-2-600x400.jpg' %}" alt=""></div>
+                        <div class="col-md-12">
+                                <div class="mt-50 mt-sm-30 mb-50 mb-sm-30 center-text"> <h2>We are Fresco Basilico</h2> </div>
+
+                                <h5 class="center-text mb-50 mb-sm-30 plr-25"> Restaurant Fresco Basilico since 1960 gives
+                                  you the opportunity to taste Italian cuisine at its best - this is confirmed by our regular
+                                  guests, among whom there is no shortage of native Italians!!.</h5>
+                        </div>
+                        <div class="col-md-6">
+                                <p class="mb-15">With us, everyone can feel like in Italy.
+                                  Whether you're in a suit and tie or in a hoodie, you'll be well looked after. Every day we work on the
+                                  taste and quality of the dishes served, we prepare all the dishes directly to the guests' request. </p>
+                        </div><!-- col-md-6 -->
+
+                        <div class="col-md-6">
+                                <p class="mb-15">We use the highest quality original and fresh Italian products that can not be replaced. However,
+                                  fruit, vegetables, herbs, fresh meat, fish and eggs are obtained by small local producers who, just like us,
+                                  are aware of how important healthy food is. </p>
+                        </div><!-- col-md-6 -->
+                </div><!-- row -->
+
+                <h6 class="center-text mt-40 mt-sm-30 mb-20">
+                        <a href="{% url 'menu' %}" class="btn-primaryc plr-25 mb-10 mlr-5"><b>SEE TODAYS MENU</b></a>
+                </h6>
+
+        </div><!-- container -->
+</section>
+
+<!-- Our story container -->
+
+{% endblock content %}

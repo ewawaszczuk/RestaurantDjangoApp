@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{%load static %}
+
+{% block title %} New Reservation {% endblock title %}
+
+{% block content %}
+
+<section class="bg-6 h-500x main-slider pos-relative">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white pt-90">
+                          <h5><b>THE BEST IN TOWN</b></h5>
+                          <h1 class="mt-30 mb-15">Easly modify reservation</h1>
+                        </div><!-- dplay-tbl-cell -->
+                </div><!-- dplay-tbl -->
+        </div><!-- container -->
+</section>
+
+<section class="story-area left-text center-sm-text">
+          <div class="container">
+              {% if message %}
+              <div class="alert alert-danger" role="alert">
+              {{ message }}
+              </div>
+                <h5> {{ new_reservation.id }}</h5>
+              {% endif %}
+            </div>
+        <div class="container">
+                <div class="heading mb-sm-10"><h3>Modify your reservation</h3>
+                        <h5 class="mt-10 mb-30">You can change what you want</h5>
+
+                </div>
+        </div>
+
+</section>
+
+        <form method="POST"> {% csrf_token %}
+
+        <div class="mt-4 ml-4 mr-4">
+            <div class="row border-bottom border-3">
+                <div class="col d-flex justify-content-end mb-2">
+                    <input  type="submit" value="Wyślij"
+                            class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">
+
+                </div>
+            </div>
+
+            <table class="table borderless">
+                <tbody>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">First name</th>
+                    <td class="col-7">
+                        <input class="w-100 p-1" value="{{ reservation.first_name }}" name="first_name" type="text">
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">Last name</th>
+                    <td class="col-7">
+                        <input class="w-100 p-1" value="{{ reservation.last_name }}" name="last_name" type="text">
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">email</th>
+                    <td class="col-7">
+                        <input class="w-100 p-1" value="{{ reservation.email }}" name="email" type="email">
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">phone</th>
+                    <td class="col-7">
+                        <input class="w-100 p-1" value="{{ reservation.phone }}" name="phone" type="number">
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">Reservation date</th>
+                    <td class="col-7">
+                        <input class="w-100 p-1"  name="date" type="date">
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">Reservation time</th>
+                    <td class="col-7">
+                      <select name="time">
+                        <option value="10:00">10 AM</option>
+                        <option value="11:00">11 AM</option>
+                        <option value="12:00">12 AM</option>
+                        <option value="13:00">Noon</option>
+                        <option value="14:00">01 PM</option>
+                        <option value="15:00">02 PM</option>
+                        <option value="16:00">03 PM</option>
+                        <option value="17:00">04 PM</option>
+                        <option value="18:00">05 PM</option>
+                        <option value="19:00">06 PM</option>
+                        <option value="20:00">07 PM</option>
+                        <option value="21:00">08 PM</option>
+                        <option value="22:00">09 PM</option>
+                      </select>
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">Table no</th>
+                    <td class="col-7">
+                        <select name="table">
+                          <option value="1"> two guests table no 1</option>
+                          <option value="2">two guests table no 2</option>
+                          <option value="3">two guests table no 3</option>
+                          <option value="4">two guests table no 4</option>
+                          <option value="5">two guests table no 5</option>
+                          <option value="6">two guests table no 6</option>
+                          <option value="7">four guests table no 7</option>
+                          <option value="8">four guests table no 8</option>
+                          <option value="9">four guests table no 9</option>
+                          <option value="10">four guests table no 10</option>
+                          <option value="11">four guests table no 11</option>
+                          <option value="12">eight guests table no 12</option>
+                          <option value="13">three guests table no 13</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <th scope="row" class="col-2">Special needs</th>
+                    <td class="col-7">
+                        <input class="w-100 p-1" value="{{ reservation.comment}}" name="needs" type="text">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- <div class="row d-flex">
+                <div class="col-5 border-bottom border-3"><h3
+                        class="text-uppercase">Sposób przygotowania</h3></div>
+                <div class="col-2"></div>
+                <div class="col-5 border-bottom border-3"><h3
+                        class="text-uppercase">Składniki</h3></div>
+            </div>
+            <div class="row d-flex">
+                <div class="col-5 p-4">
+                    <textarea class="w-100 p-1" rows="10" name="instructions">{{ recipe.instructions }}</textarea>
+                </div>
+                <div class="col-2"></div>
+
+                <div class="col-5 p-4">
+                    <textarea class="w-100 p-1" rows="10" name="ingredients">{{ recipe.ingredients }}</textarea>
+                </div>
+            </div> -->
+        </div>
+
+     </form>
+
+
+{% endblock content %}

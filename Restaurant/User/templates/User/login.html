@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<section class="bg-6 h-500x main-slider pos-relative">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white pt-90">
+                          <h5><b>THE BEST IN TOWN</b></h5>
+                          <h1 class="mt-30 mb-15">Log in to your account!</h1>
+                        </div><!-- dplay-tbl-cell -->
+                </div><!-- dplay-tbl -->
+        </div><!-- container -->
+</section>
+
+<section class="story-area center-text">
+        <div class="container ">
+                <div class="heading mb-sm-10"><h3>Login</h3>
+                        <h5 class="mt-10 mb-30"> Fill in the blanks</h5>
+                        <p class="mx-w-700x mlr-auto"></p>
+                </div>
+                <form method="POST" class="col-md-6 mt-10 mb-30">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Login</button>
+                        <small class="text-muted ml-2">
+                            <a href="#">Forgot Password?</a>
+                        </small>
+                    </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+                    </small>
+                </div>
+
+        </div><!-- container -->
+</section>
+
+
+
+{% endblock content %}

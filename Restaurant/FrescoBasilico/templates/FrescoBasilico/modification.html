@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{%load static %}
+
+{% block title %} Modification {% endblock title %}
+
+{% block content %}
+
+<section class="bg-6 h-500x main-slider pos-relative">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white pt-90">
+                          <h5><b>THE BEST IN TOWN</b></h5>
+                          <h1 class="mt-30 mb-15">Modify your reservation!</h1>
+                        </div><!-- dplay-tbl-cell -->
+                </div><!-- dplay-tbl -->
+        </div><!-- container -->
+</section>
+
+<section class="story-area left-text center-sm-text">
+        <div class="container">
+                <div class="heading">
+                        <img class="heading-img" src="images/heading_logo.png" alt="">
+                        <h5>Fill the blank with reservation number and make changes</h5>
+                <form method="POST"> {% csrf_token %}
+                  <div class="mt-4 ml-4 mr-4">
+                      <div class="row border-bottom border-3">
+                          <div class="col d-flex justify-content-end mb-2">
+                              <input  type="submit" value="Wyślij"
+                                      class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">
+
+                          </div>
+                      </div>
+                  <table class="table borderless">
+                      <tbody>
+                      <tr class="d-flex">
+                          <th scope="row" class="col-2">Reservation number</th>
+                          <td class="col-7">
+                              <input class="w-100 p-1"name="res_no" type="number">
+                          </td>
+                      </tr>
+                    </tbody>
+                    </table>
+                  </form>
+                </div>
+              </div>
+
+</section>
+
+{% endblock content %}

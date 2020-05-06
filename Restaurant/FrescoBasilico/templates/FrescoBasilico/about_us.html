@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{%load static %}
+
+{% block title %} About Us {% endblock title %}
+
+{% block content %}
+
+<section class="bg-4 h-500x main-slider pos-relative">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white pt-90">
+                                <h5><b>THE BEST IN TOWN</b></h5>
+                                <h1 class="mt-30 mb-15">About our Pizzaria</h1>
+                        </div><!-- dplay-tbl-cell -->
+                </div><!-- dplay-tbl -->
+        </div><!-- container -->
+</section>
+
+<section class="story-area left-text center-sm-text pos-relative">
+        <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
+        <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
+        <div class="container">
+                <div class="heading">
+                        <h2>Our Story</h2>
+                        <div class="col-md-12"><img class="mb-30" src="{% static 'images/family.jpg' %}" alt=""></div>
+                </div>
+
+                <div class="row">
+                        <div class="col-md-6">
+                                <p class="mb-30">The Fresco Basilico story begins in Poland, Opole in the 1960’s. Janina Nowak
+                                   found a recipe in the old desk at her attic. It was a recipe for homemade pizza. She have
+                                   never cook something like that before but she decided to try. It appears that everyone loved
+                                    her pizza and that would inspire her to open a small Italian Restaurant, but she eventually
+                                    gave up her dream of owning her own business in order to raise her small children, Patric and
+                                    Jack.  </p>
+                        </div><!-- col-md-6 -->
+
+                        <div class="col-md-6">
+                                <p class="mb-30">In 1980 with their children grown, Janina and her family decided to pack up all
+                                   of their belongings and move to Warszawa to make one last attempt at owning their own business.
+                                    With the last of their savings, they opened Fresco Basilico Restaurant and began selling pizzas.
+                                     Through hard work and determination their business grew to a modest size. With great foresight
+                                      and intuition, their son Patric decided to help his parents and add some italian pastas to
+                                      the menu. It was a hit! Somehow he just knew that guests would enjoy a restaurant with all
+                                      kinds of italian meals. The restaurant was an immediate success and it is still so today.  </p>
+                        </div><!-- col-md-6 -->
+                </div><!-- row -->
+        </div><!-- container -->
+</section>
+<section class="story-area bg-seller color-white pos-relative">
+        <div class="pos-bottom triangle-up"></div>
+        <div class="pos-top triangle-bottom"></div>
+        <div class="container">
+                <div class="heading">
+                        <img class="heading-img" src="images/heading_logo.png" alt="">
+                        <h2>What Clients Say</h2>
+                <div class="row">
+                      <div class="col-md-4">
+                              <h5 class="color-ash mb-50 mb-sm-30 mt-20">{{ comment1.text }} </h5>
+                              <h5><b class="color-primary">{{ comment1.author }}</b>,<b class="color-ash">Customer</b>
+                              </h5>
+
+                      </div>
+
+                      <div class="col-md-4">
+                              <h5 class="color-ash mb-50 mb-sm-30 mt-20">{{ comment2.text }} </h5>
+                              <h5><b class="color-primary">{{ comment2.author }}</b>,<b class="color-ash">Customer</b>
+                              </h5>
+
+                      </div>
+                      <div class="col-md-4">
+                              <h5 class="color-ash mb-50 mb-sm-30 mt-20">{{ comment3.text }} </h5>
+                              <h5><b class="color-primary">{{ comment3.author }}</b>,<b class="color-ash">Customer</b>
+                              </h5>
+
+                      </div>
+              </div>
+
+              {% if request.user.is_authenticated %}
+              <h5><a href="{% url 'comment' %}" class="btn-primaryc plr-25"><b>LEAVE A COMMENT!</b></a></h5>
+              {% else %}
+              <h5><a href="{% url 'login' %}" class="btn-primaryc plr-25"><b>LOG IN TO LEAVE A COMMENT!</b></a></h5>
+              {% endif %}
+
+              </div>
+
+
+
+        </div><!-- container -->
+</section>
+
+
+
+
+<section class="counter-section section center-text" id="counter">
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-4">
+                                <div class="mb-30 ">
+                                        <i class="mlr-auto mb-30  icon-gradient icon-pizza"></i>
+                                        <h2><b><span class="counter-value" data-duration="400" data-count="10">0</span></b>
+                                        </h2>
+                                        <h5 class="semi-black"><b>Pizza dishes</b></h5>
+                                </div><!-- margin-b-30 -->
+                        </div><!-- col-md-3-->
+
+                        <div class="col-sm-6 col-md-3">
+                                <div class="mb-30">
+                                        <i class="mlr-auto mb-30 icon-gradient icon-salad"></i>
+                                        <h2><b><span class="counter-value" data-duration="1000" data-count="100">0</span></b>
+                                        </h2>
+                                        <h5 class="semi-black"><b>% HAPPY CLIENTS!</b></h5>
+                                </div><!-- margin-b-30 -->
+                        </div><!-- col-md-3-->
+
+
+                        <div class="col-sm-4">
+                                <div class="mb-30">
+                                        <i class="mlr-auto mb-30 icon-gradient icon-pasta"></i>
+                                        <h2><b><span class="counter-value" data-duration="300"
+                                                     data-count="6">0</span></b></h2>
+                                        <h5 class="semi-black"><b>Pasta Dishes</b></h5>
+                                </div><!-- margin-b-30 -->
+                        </div><!-- col-md-3-->
+
+
+
+                </div><!-- row-->
+        </div><!-- container-->
+</section><!-- counter-section-->
+
+
+
+
+{% endblock content %}

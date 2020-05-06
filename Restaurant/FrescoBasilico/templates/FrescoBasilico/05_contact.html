@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{%load static %}
+{% block content %}
+
+<section class="bg-6 h-500x main-slider pos-relative">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white pt-90">
+                          <h5><b>THE BEST IN TOWN</b></h5>
+                          <h1 class="mt-30 mb-15">Book a table now!</h1>
+                        </div><!-- dplay-tbl-cell -->
+                </div><!-- dplay-tbl -->
+        </div><!-- container -->
+</section>
+
+
+<section class="story-area left-text center-sm-text">
+        <div class="container">
+                <div class="heading mb-sm-10"><h3>Make a Reservation</h3>
+                        <h5 class="mt-10 mb-30">Let us know when would you like to come by</h5>
+                        <p class="mx-w-700x mlr-auto"></p>
+                </div>
+
+                <form class="form-style-1 placeholder-1">
+                        <div class="row">
+                                <div class="col-md-6 mt-10 mb-30"> User Name <input class="mb-20" type="text" placeholder=" Your Name" name = "name">  </div>
+                                <div class="col-md-6 mt-10 mb-30"> E-mail <input class="mb-20" type="email" placeholder="Your E-mail" name = "email">  </div>
+                                <div class="col-md-6 mt-10 mb-30"> Phone number <input class="mb-20" type="number" placeholder="Your Phone no" name = "phone">  </div>
+                                <div class="col-md-6 mt-10 mb-30"> Reservation date <input class="mb-20" type="date" placeholder="date" name = "date">  </div>
+                                <div class="col-md-6 mt-10 mb-30"> Reservation time <input class="mb-20" type="text" placeholder="time" name = "time">  </div>
+                                <div class="col-md-6 mt-10 mb-30"> Guests <input class="mb-20" type="text" placeholder="guests no" name = "guests">  </div>
+                                <div class="col-md-12 mt-10 mb-30"> Your Special needs
+                                        <textarea class="h-200x ptb-20" placeholder="Message" name = "message"></textarea></div>
+                        </div><!-- row -->
+                        <h6 class="center-text mtb-30"><a href="#" class="btn-primaryc plr-25"><b>SEND MESSAGE</b></a></h6>
+                </form>
+        </div><!-- container -->
+</section>
+
+
+<div class="map-area h-700x mb--30">
+        <div id="map" style="height:100%;"></div>
+</div><!-- map-area -->
+{% endblock content %}

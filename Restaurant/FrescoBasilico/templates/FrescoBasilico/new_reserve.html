@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{%load static %}
+
+{% block title %} New Reservation {% endblock title %}
+
+{% block content %}
+
+<section class="bg-6 h-500x main-slider pos-relative">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white pt-90">
+                          <h5><b>THE BEST IN TOWN</b></h5>
+                          <h1 class="mt-30 mb-15">Book a table now!</h1>
+                        </div><!-- dplay-tbl-cell -->
+                </div><!-- dplay-tbl -->
+        </div><!-- container -->
+</section>
+
+<section class="story-area left-text center-sm-text">
+
+  <div class="container">
+      {% if message %}
+      <div class="alert alert-danger" role="alert">
+      {{ message }}
+      </div>
+        <h5> {{ new_reservation.id }}</h5>
+      {% endif %}
+    </div>
+        <div class="container">
+                <div class="heading mb-sm-10"><h3>Make a Reservation</h3>
+                        <h5 class="mt-10 mb-30">Let us know when would you like to come by</h5>
+                        <h5 class="mt-10 mb-30">Map below will help you to chose the best place for you!  </h5>
+                        <h5> Tables from 1 to 6 are for max two guests, </h5>
+                        <h5> from 7 to 11 for max 4 guests,</h5>
+                        <h5> table no 12 for 8 guests and no 13 for max three guests.</h5>
+
+                </div>
+        </div>
+        <div class="container">
+                        <div class="row">
+                        <div class="col-md-6"><h5><form action="" method="post" class="mb-30" alt="">
+                              {{ form.errors }}
+                              {{ form.non_field_errors }}
+                              {{ form.as_p }}
+                              {% csrf_token %}
+                              <input name="submit_button" type="submit" value="Submit">
+                        </form></h5>
+                        </div>
+                        <div class="col-md-6"><img class="mb-30" src="{% static 'images/plan.png' %}" alt=""></div>
+
+                        </div>
+
+        </div>
+</section>
+
+
+{% endblock content %}
